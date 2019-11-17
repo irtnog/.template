@@ -1,0 +1,11 @@
+# -*- coding: utf-8 -*-
+# vim: ft=yaml
+---
+name: default
+title: refactored-octo-pancake
+maintainer: Matthew X. Economou
+license: Apache-2.0
+summary: Verify that the code is setup and configured correctly
+supports:
+  - platform-family: redhat
+  - platform-family: windows

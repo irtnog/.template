@@ -1,0 +1,5 @@
+name: .template
+version: 1.0.0
+release: 1
+summary: example repo
+description:  Template Git repository with pre-built Travis CI and Test Kitchen integrations

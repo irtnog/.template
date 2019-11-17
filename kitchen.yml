@@ -1,0 +1,35 @@
+# -*- coding: utf-8 -*-
+# vim: ft=yaml
+---
+driver:
+  name: docker
+  use_sudo: false
+  privileged: true
+  run_command: /lib/systemd/systemd
+
+# Make sure the platforms listed below match up with the `env.matrix`
+# instances defined in `.travis.yml`.
+platforms:
+  - name: centos-7
+#  - name: windows-server-2019
+#    driver_config:
+#      image: mcr.microsoft.com/windows:1809
+#      platform: windows
+
+# This (and inspec) requires accepting the Chef license per
+# https://docs.chef.io/chef_license_accept.html.
+provisioner:
+  name: chef_zero
+
+verifier:
+  name: inspec                 # https://www.inspec.io/
+  sudo: true
+  # cli, documentation, html, progress, json, json-min, json-rspec, junit
+  reporter:
+    - cli
+
+suites:
+  - name: default
+    verifier:
+      inspec_tests:
+        - path: test/integration/default

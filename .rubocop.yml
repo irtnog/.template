@@ -1,0 +1,7 @@
+# -*- coding: utf-8 -*-
+# vim: ft=yaml
+---
+# Increase from default of `80` based on
+# https://github.com/PyCQA/flake8-bugbear#opinionated-warnings (`B950`).
+Metrics/LineLength:
+  Max: 88
